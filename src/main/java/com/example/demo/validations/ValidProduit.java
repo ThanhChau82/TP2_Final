@@ -1,4 +1,4 @@
-package com.example.demo.validation;
+package com.example.demo.validations;
 
 public class ValidProduit {
 	public boolean verifTitre(String titre) {
