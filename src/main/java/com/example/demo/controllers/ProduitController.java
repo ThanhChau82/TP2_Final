@@ -2,6 +2,8 @@ package com.example.demo.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid; // Ajouter la dépendence via click droit sur le projet, puis Spring/Add Starters
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +26,7 @@ public class ProduitController {
 	 * @return
 	 */
 	@PostMapping
-	public Produit addProduit(@RequestBody Produit produit) {
+	public Produit addProduit(@Valid @RequestBody Produit produit) { // @Valid : vérifier au préalable les validations via Annotations côtés entities (class Produit)
 		return produitRepository.save(produit);		
 	}
 	
