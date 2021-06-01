@@ -5,7 +5,7 @@ public class ValidProduit {
 		return titre != null;
 	}
 	
-	public boolean verifPrix(int unit,int vente) {
+	public boolean verifPrix(float unit, float vente) {
 		return vente > unit;	
 	}
 	
