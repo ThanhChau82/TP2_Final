@@ -4,6 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
+
+import org.springframework.lang.NonNull;
 
 @Entity
 public class Produit {
@@ -11,11 +15,18 @@ public class Produit {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
+	@NotBlank
+	@Max(255)
 	private String titre;
-	private float prixU;
-	private float prixV;
-	private int quantite;
 	
+	@NonNull
+	private float prixU;
+	
+	@NonNull
+	private float prixV;
+	
+	@NonNull
+	private int quantite;	
 	
 	public Produit() {
 		super();
